@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bid Monitoring</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/api.js"></script>
+  <script defer src="js/dashboard-widget.js"></script>
+  <script defer src="js/bids.js"></script>
+</head>
+<body>
+<header>
+  <h1>Bid Monitoring</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="admin.html">Admin</a>
+    <a href="users.html">User</a>
+    <a href="items.html">Item</a>
+    <a href="bids.html" class="active">Bid</a>
+  </nav>
+</header>
+<main>
+  <a class="link-back" href="index.html">&larr; Back to Home</a>
+
+  <section class="panel">
+    <h2>Recent Bids</h2>
+
+    <div class="loading" id="bids-loading">Loading bids...</div>
+    <div class="error-box hidden" id="bids-error"></div>
+    <div class="table-wrap hidden" id="bids-table-wrap">
+      <table class="data-table" id="bids-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Item ID</th><th>Bidder ID</th><th>Amount</th><th>Placed At</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="report-area"></section>
+</main>
+<footer>
+  <small>2025 Bid Bazaar Admin Panel</small>
+</footer>
+</body>
+</html>

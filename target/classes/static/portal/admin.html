@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/api.js"></script>
+    <script defer src="js/dashboard-widget.js"></script>
+    <script defer src="js/admin.js"></script>
+</head>
+<body>
+<header>
+    <h1>Admin Management</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="admin.html" class="active">Admin</a>
+        <a href="users.html">User</a>
+        <a href="items.html">Item</a>
+        <a href="bids.html">Bid</a>
+    </nav>
+</header>
+<main>
+    <a class="link-back" href="index.html">&larr; Back to Home</a>
+
+    <section class="panel">
+        <h2>Create New Admin / Staff</h2>
+        <form id="admin-create-form" autocomplete="off" novalidate>
+            <div class="form-grid">
+                <div class="form-field">
+                    <label>Username</label>
+                    <input name="username" minlength="3" maxlength="50" required>
+                </div>
+                <div class="form-field">
+                    <label>Email</label>
+                    <input name="email" type="email" maxlength="120" required>
+                </div>
+                <div class="form-field">
+                    <label>Full Name</label>
+                    <input name="fullName" maxlength="80">
+                </div>
+                <div class="form-field">
+                    <label>Password</label>
+                    <input name="password" type="password" minlength="6" maxlength="60" required>
+                </div>
+                <div class="form-field">
+                    <label>Role</label>
+                    <select name="role" required>
+                        <option value="SUPER_ADMIN">SUPER_ADMIN</option>
+                        <option value="STAFF" selected>STAFF</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button class="btn primary" type="submit">Create Admin</button>
+                <button class="btn" type="reset">Reset</button>
+            </div>
+            <div id="admin-create-msg" class="small-note"></div>
+        </form>
+    </section>
+
+    <section class="panel">
+        <h2>Existing Admins</h2>
+        <div class="loading" id="admins-loading">Loading admins...</div>
+        <div class="error-box hidden" id="admins-error"></div>
+        <div class="table-wrap hidden" id="admins-table-wrap">
+            <table class="data-table" id="admins-table">
+                <thead>
+                <tr>
+                    <th>ID</th><th>User</th><th>Email</th><th>Role</th><th>Enabled</th>
+                    <th>Full Name</th><th>Created</th><th>Update</th><th>Delete</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p class="small-note">Password update: fill New Pass field then click Save.</p>
+        </div>
+    </section>
+
+    <section id="report-area"></section>
+</main>
+<footer>
+    <small>2025 Bid Bazaar Admin Panel</small>
+</footer>
+</body>
+</html>
