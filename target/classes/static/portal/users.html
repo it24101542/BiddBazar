@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Permissions</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/api.js"></script>
+  <script defer src="js/dashboard-widget.js"></script>
+  <script defer src="js/users.js"></script>
+</head>
+<body>
+<header>
+  <h1>User Permissions</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="admin.html">Admin</a>
+    <a href="users.html" class="active">User</a>
+    <a href="items.html">Item</a>
+    <a href="bids.html">Bid</a>
+  </nav>
+</header>
+<main>
+  <a class="link-back" href="index.html">&larr; Back to Home</a>
+
+  <section class="panel">
+    <h2>Manage User Flags</h2>
+
+    <div class="loading" id="users-loading">Loading users...</div>
+    <div class="error-box hidden" id="users-error"></div>
+    <div id="users-feedback" class="small-note"></div>
+
+    <div class="table-wrap hidden" id="users-table-wrap">
+      <table class="data-table" id="users-table">
+        <thead>
+        <tr>
+          <th>ID</th><th>User</th><th>Email</th><th>Active</th><th>Suspicious</th><th>Toggle Suspicious</th><th>Delete</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="report-area"></section>
+</main>
+
+<footer>
+  <small>2025 Bid Bazaar Admin Panel</small>
+</footer>
+
+
+<div id="toast" class="hidden" style="
+  position:fixed;bottom:18px;left:50%;transform:translateX(-50%);
+  background:#24323d;padding:.75rem 1rem;border:1px solid #385063;
+  border-radius:8px;font-size:.7rem;display:flex;gap:.75rem;align-items:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.35);z-index:999;">
+  <span id="toast-msg"></span>
+  <button id="toast-undo" class="btn warn btn-sm" style="padding:.35rem .6rem;font-size:.6rem;">Undo</button>
+  <button id="toast-close" class="btn btn-sm" style="padding:.35rem .6rem;font-size:.6rem;">X</button>
+</div>
+</body>
+</html>
